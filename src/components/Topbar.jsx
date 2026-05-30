@@ -14,10 +14,9 @@ import { SiWordpress } from "react-icons/si";
 
 export default function Topbar() {
   return (
-  <div className="bg-red-800 text-white">
-
-    <div
-      className="
+    <div className="bg-red-800 text-white">
+      <div
+        className="
         max-w-7xl
         mx-auto
         px-4 sm:px-6
@@ -26,44 +25,27 @@ export default function Topbar() {
         items-center
         justify-between
       "
-    >
+      >
+        {/* DESKTOP CONTACT INFO */}
+        <div className="hidden lg:flex items-center gap-8 text-[14px] font-medium">
+          {/* PHONE */}
+          <a href="tel:+91XXXXXXXXXX" className="flex items-center gap-2">
+            <FaPhoneAlt className="text-[13px]" />
 
-      {/* DESKTOP CONTACT INFO */}
-      <div className="hidden lg:flex items-center gap-8 text-[14px] font-medium">
+            <span>+91X-XXX-XXXX</span>
+          </a>
 
-        {/* PHONE */}
-        <a
-          href="tel:+91XXXXXXXXXX"
-          className="flex items-center gap-2"
-        >
+          {/* EMAIL */}
+          <a href="mailto:xyz@gmail.com" className="flex items-center gap-2">
+            <FaEnvelope className="text-[13px]" />
 
-          <FaPhoneAlt className="text-[13px]" />
+            <span>xyz@gmail.com</span>
+          </a>
+        </div>
 
-          <span>
-            +91X-XXX-XXXX
-          </span>
-
-        </a>
-
-        {/* EMAIL */}
-        <a
-          href="mailto:xyz@gmail.com"
-          className="flex items-center gap-2"
-        >
-
-          <FaEnvelope className="text-[13px]" />
-
-          <span>
-            xyz@gmail.com
-          </span>
-
-        </a>
-
-      </div>
-
-      {/* SOCIAL ICONS */}
-      <div
-        className="
+        {/* SOCIAL ICONS */}
+        <div
+          className="
           flex
           items-center
           justify-center
@@ -71,25 +53,22 @@ export default function Topbar() {
           w-full
           lg:w-auto
         "
-      >
-
-        {[
-          
-          <FaPhoneAlt />,
-          <FaEnvelope />,
-          <FaFacebookF />,
-          <FaInstagram />,
-          <FaXTwitter />,
-          <FaYoutube />,
-          <FaPinterestP />,
-          <SiWordpress />,
-          <FaLinkedinIn />,
-        ].map((icon, index) => (
-
-          <a
-            key={index}
-            href="#"
-            className="
+        >
+          {[
+            <FaPhoneAlt key="phone" />,
+            <FaEnvelope key="mail" />,
+            <FaFacebookF key="facebook" />,
+            <FaInstagram key="instagram" />,
+            <FaXTwitter key="twitter" />,
+            <FaYoutube key="youtube" />,
+            <FaPinterestP key="pinterest" />,
+            <SiWordpress key="wordpress" />,
+            <FaLinkedinIn key="linkedin" />,
+          ].map((icon, index) => (
+            <a
+              key={index}
+              href="#"
+              className="
               w-9 h-9
               sm:w-10 sm:h-10
               rounded-full
@@ -103,19 +82,12 @@ export default function Topbar() {
               hover:text-white
               transition duration-300
             "
-          >
-
-            {icon}
-
-          </a>
-
-        ))}
-
+            >
+              {icon}
+            </a>
+          ))}
+        </div>
       </div>
-
     </div>
-
-  </div>
-);
-  
+  );
 }

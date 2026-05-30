@@ -17,6 +17,11 @@ export default function MegaMenu({
     border-gray-200
     pb-4
     mb-5
+    text-[14px]
+    transition-all
+    duration-300
+    hover:text-[#0B67C2]
+    hover:bg-[#f3f3f3]
   `;
 
   const menuItemClass = `
@@ -62,7 +67,7 @@ export default function MegaMenu({
         transition-all
         duration-500
         ease-[cubic-bezier(0.23,1,0.32,1)]
-        z-50
+        z-50  mx-16
       "
     >
       <div
@@ -77,9 +82,9 @@ export default function MegaMenu({
         `}
       >
         <div
-          className={`grid ${title3 ? "grid-cols-3" : "grid-cols-2"} gap-12`}
+          className={`grid ${title3 ? "grid-cols-3" : "grid-cols-2"} gap-12 `}
         >
-          <div>
+          <div className="">
             <h3 className={headingClass}>{title1}</h3>
 
             <ul className="space-y-1">
