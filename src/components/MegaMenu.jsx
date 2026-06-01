@@ -11,17 +11,15 @@ export default function MegaMenu({
     uppercase
     font-bold
     text-[#444]
-    text-[17px]
+    text-[14px]
     tracking-wide
     border-b
     border-gray-200
     pb-4
     mb-5
-    text-[14px]
     transition-all
     duration-300
     hover:text-[#0B67C2]
-    hover:bg-[#f3f3f3]
   `;
 
   const menuItemClass = `
@@ -50,6 +48,24 @@ export default function MegaMenu({
     hover:before:w-[3px]
   `;
 
+  const sections = [
+    {
+      title: title1,
+      items: items1,
+    },
+    {
+      title: title2,
+      items: items2,
+    },
+  ];
+
+  if (title3 && items3) {
+    sections.push({
+      title: title3,
+      items: items3,
+    });
+  }
+
   return (
     <div
       className="
@@ -67,7 +83,8 @@ export default function MegaMenu({
         transition-all
         duration-500
         ease-[cubic-bezier(0.23,1,0.32,1)]
-        z-50  mx-16
+        z-50
+        mx-16
       "
     >
       <div
@@ -82,45 +99,30 @@ export default function MegaMenu({
         `}
       >
         <div
-          className={`grid ${title3 ? "grid-cols-3" : "grid-cols-2"} gap-12 `}
+          className={`grid ${
+            sections.length === 3
+              ? "grid-cols-3"
+              : "grid-cols-2"
+          } gap-12`}
         >
-          <div className="">
-            <h3 className={headingClass}>{title1}</h3>
-
-            <ul className="space-y-1">
-              {items1.map((item) => (
-                <li key={item} className={menuItemClass}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className={headingClass}>{title2}</h3>
-
-            <ul className="space-y-1">
-              {items2.map((item) => (
-                <li key={item} className={menuItemClass}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {title3 && (
-            <div>
-              <h3 className={headingClass}>{title3}</h3>
+          {sections.map((section) => (
+            <div key={section.title}>
+              <h3 className={headingClass}>
+                {section.title}
+              </h3>
 
               <ul className="space-y-1">
-                {items3.map((item) => (
-                  <li key={item} className={menuItemClass}>
+                {section.items.map((item) => (
+                  <li
+                    key={item}
+                    className={menuItemClass}
+                  >
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-          )}
+          ))}
         </div>
       </div>
     </div>

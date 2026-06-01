@@ -4,26 +4,31 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 export default function FloatingCallButton() {
   return (
-    <div className="fixed left-5 bottom-10 z-50">
+    <div className="fixed left-5 bottom-[22%] z-99">
 
-      <button
+      <a
+        href="tel:+91XXXXXXXXXX"
+        aria-label="Call Now"
+        title="Call Now"
         className="
-          w-16 h-16
+          phone-pulse
+          w-16
+          h-16
           rounded-full
-          bg-red-600
+          bg-[#cf0808]
           text-white
-          flex items-center justify-center
-          text-2xl
-          shadow-2xl
-          hover:bg-red-700
+          flex
+          items-center
+          justify-center
+          text-xl
+          shadow-lg
           hover:scale-110
-          transition duration-300
+          transition-all
+          duration-300
         "
       >
-
-        <FaPhoneAlt />
-
-      </button>
+        <FaPhoneAlt className="text-2xl font-extrabold animate-[wiggle_2.5s_infinite]" />
+      </a>
 
     </div>
   );

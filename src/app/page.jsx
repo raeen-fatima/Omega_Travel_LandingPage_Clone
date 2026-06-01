@@ -1,15 +1,15 @@
+import CarSlider from "@/components/CarSlider";
 import EnquiryStrip from "@/components/EnquiryStrip";
 import FAQ from "@/components/FAQ";
 import Features from "@/components/Features";
-import FloatingActions from "@/components/FloatingActions";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import Footer from "@/components/Footer";
 import HeroBanner from "@/components/HeroBanner";
+import HeroSection from "@/components/HeroSection";
 import InfoSection from "@/components/InfoSection";
-import LuxurySlider from "@/components/LuxurySlider";
 import Navbar from "@/components/Navbar";
 import Topbar from "@/components/Topbar";
-import TravelContent from "@/components/TravelContent";
+import FloatingScrollUpButton from "@/components/FloatingScrollUpButton"
 
 export default function Home() {
   return (
@@ -17,14 +17,14 @@ export default function Home() {
        <Topbar />
        <Navbar />
        <HeroBanner />
-       <TravelContent />
+       <HeroSection />
        <InfoSection />
        <Features />
        <FAQ />
-       <LuxurySlider />
+       <CarSlider />
        <EnquiryStrip />
        <FloatingCallButton />
-       <FloatingActions />
+       <FloatingScrollUpButton />
        <Footer />
     </div>
   );

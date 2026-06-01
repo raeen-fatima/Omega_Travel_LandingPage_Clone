@@ -3,14 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-import {
-  FaChevronDown,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
-
-import MegaMenu from "./MegaMenu";
+import DropdownMenu from "./DropdownMenu";
 
 import {
   tempoTravellerData,
@@ -47,42 +42,15 @@ const mobileLinks = [
   "Contact",
 ];
 
-function DropdownMenu({
-  title,
-  data,
-  width,
-}) {
-  return (
-    <li className="relative group">
-
-      <div className={navItemClass}>
-        {title}
-        <FaChevronDown className="text-[11px]" />
-      </div>
-
-      <MegaMenu
-        {...data}
-        width={width}
-      />
-
-    </li>
-  );
-}
-
 export default function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
     <nav className="bg-white shadow-md relative z-50">
-
       <div className="max-w-7xl mx-auto px-3 lg:px-6">
-
         <div className="flex items-center justify-between h-20.5">
-
           {/* Logo */}
-
           <div className="shrink-0">
-
             <Image
               src="/logo.webp"
               alt="Logo"
@@ -91,29 +59,19 @@ export default function Navbar() {
               className="object-contain"
               priority
             />
-
           </div>
 
           {/* Desktop Menu */}
-
           <div className="hidden lg:flex items-center gap-8">
-
             <ul className="flex items-center gap-2">
-
               <li>
-                <Link
-                  href="#"
-                  className={navItemClass}
-                >
+                <Link href="#" className={navItemClass}>
                   Home
                 </Link>
               </li>
 
               <li>
-                <Link
-                  href="#"
-                  className={navItemClass}
-                >
+                <Link href="#" className={navItemClass}>
                   About Us
                 </Link>
               </li>
@@ -143,34 +101,26 @@ export default function Navbar() {
               />
 
               <li>
-                <Link
-                  href="#"
-                  className={navItemClass}
-                >
+                <Link href="#" className={navItemClass}>
                   Blog
                 </Link>
               </li>
 
               <li>
-                <Link
-                  href="#"
-                  className={navItemClass}
-                >
+                <Link href="#" className={navItemClass}>
                   Contact
                 </Link>
               </li>
-
             </ul>
 
             {/* Desktop Button */}
-
             <button
               className="
                 bg-red-600
                 hover:bg-red-700
                 text-white
                 px-8
-                h-12.5
+                
                 rounded-full
                 font-semibold
                 transition-all
@@ -179,13 +129,10 @@ export default function Navbar() {
             >
               ENQUIRY NOW
             </button>
-
           </div>
 
           {/* Mobile Header */}
-
           <div className="flex items-center gap-3 lg:hidden">
-
             <button
               className="
                 bg-red-600
@@ -201,41 +148,19 @@ export default function Navbar() {
             </button>
 
             <button
-              onClick={() =>
-                setMobileMenu(!mobileMenu)
-              }
+              onClick={() => setMobileMenu(!mobileMenu)}
               className="text-2xl text-[#444]"
             >
-              {mobileMenu ? (
-                <FaTimes />
-              ) : (
-                <FaBars />
-              )}
+              {mobileMenu ? <FaTimes /> : <FaBars />}
             </button>
-
           </div>
-
         </div>
-
       </div>
 
       {/* Mobile Menu */}
-
       {mobileMenu && (
-
-        <div
-          className="
-            lg:hidden
-            bg-white
-            border-t
-            shadow-lg
-            px-6
-            py-5
-          "
-        >
-
+        <div className="lg:hidden bg-white border-t shadow-lg px-6 py-5">
           <ul className="space-y-5">
-
             {mobileLinks.map((item) => (
               <li
                 key={item}
@@ -251,13 +176,9 @@ export default function Navbar() {
                 {item}
               </li>
             ))}
-
           </ul>
-
         </div>
-
       )}
-
     </nav>
   );
 }

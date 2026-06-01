@@ -10,6 +10,9 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 
+import { FaXTwitter } from "react-icons/fa6";
+import { SiWordpress } from "react-icons/si";
+
 const cityLinks1 = [
   "Tempo Traveller Hire in Gurgaon",
   "Tempo Traveller Hire in Noida",
@@ -20,7 +23,6 @@ const cityLinks1 = [
   "Tempo Traveller Hire in Mumbai",
   "Tempo Traveller Hire in Varanasi",
   "Tempo Traveller Hire in Udaipur",
-  "Tempo Traveller Hire in Jaipur",
 ];
 
 const cityLinks2 = [
@@ -33,7 +35,6 @@ const cityLinks2 = [
   "Tempo Traveller in Ahmedabad",
   "Tempo Traveller in Ambala Cantt",
   "Tempo Traveller in Dehradun",
-  "Tempo Traveller in Haridwar",
 ];
 
 const outstationLinks1 = [
@@ -46,7 +47,6 @@ const outstationLinks1 = [
   "Delhi to Jodhpur",
   "Delhi to Kasol",
   "Delhi to Katra",
-  "Delhi to Manali",
 ];
 
 const outstationLinks2 = [
@@ -59,7 +59,19 @@ const outstationLinks2 = [
   "Delhi to Badrinath",
   "Delhi to Kedarnath",
   "Delhi to Kasauli",
-  "Delhi to Mathura",
+];
+
+const maharajaLinks = [
+  "10 Seater Maharaja Tempo Traveller",
+  "11 Seater Maharaja Tempo Traveller",
+  "12 Seater Maharaja Tempo Traveller",
+  "13 Seater Maharaja Tempo Traveller",
+  "14 Seater Maharaja Tempo Traveller",
+  "15 Seater Maharaja Tempo Traveller",
+  "16 Seater Maharaja Tempo Traveller",
+  "17 Seater Maharaja Tempo Traveller",
+  "18 Seater Maharaja Tempo Traveller",
+  "19 Seater Maharaja Tempo Traveller",
 ];
 
 const usefulLinks = [
@@ -75,230 +87,264 @@ const usefulLinks = [
   "Travel Guide",
 ];
 
+const socialIcons = [
+  FaFacebookF,
+  FaInstagram,
+  FaXTwitter,
+  FaPinterestP,
+  FaYoutube,
+  SiWordpress,
+  FaLinkedinIn,
+];
+
+const linkClass = `
+flex
+items-center
+gap-3
+py-3
+text-[15px]
+text-white
+border-b
+border-dashed
+border-white/20
+hover:text-red-400
+transition-all
+duration-300
+`;
+
 export default function Footer() {
   return (
-    <footer className="bg-[#02182B] text-white pt-16">
+    <footer className="bg-[#031B2E] text-white pt-20">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* TOP CONTACT STRIP */}
-        <div className="bg-[#0B5EC9] rounded-xl px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center -mt-28 relative z-10">
+        {/* CONTACT STRIP */}
 
-          {/* PHONE */}
+        <div
+          className="
+            bg-[#0D63C9]
+            rounded-[20px]
+            px-8
+            lg:px-12
+            py-8
+            grid
+            md:grid-cols-3
+            gap-8
+            items-center
+            relative
+            -mt-28
+            z-10
+          "
+        >
           <div className="flex items-center gap-4">
 
-            <div className="w-14 h-14 rounded-full bg-white text-[#0B5EC9] flex items-center justify-center text-xl">
-
+            <div
+              className="
+                w-14 h-14
+                rounded-full
+                bg-white
+                text-[#0D63C9]
+                flex
+                items-center
+                justify-center
+                text-2xl
+              "
+            >
               <FaPhoneAlt />
-
             </div>
 
-            <div>
-              <p className="text-sm text-gray-200">
-                +91X-XXX-XXXX
-              </p>
-            </div>
+            <p>+91X-XXX-XXXX</p>
 
           </div>
 
-          {/* EMAIL */}
           <div className="flex items-center gap-4">
 
-            <div className="w-14 h-14 rounded-full bg-white text-[#0B5EC9] flex items-center justify-center text-xl">
-
+            <div
+              className="
+                w-14 h-14
+                rounded-full
+                bg-white
+                text-[#0D63C9]
+                flex
+                items-center
+                justify-center
+                text-2xl
+              "
+            >
               <FaEnvelope />
-
             </div>
 
-            <div>
-              <p className="text-sm text-gray-200">
-                xyz@gmail.com
-              </p>
+            <p>xyz@gmail.com</p>
+
+          </div>
+
+          <div className="flex items-center gap-4">
+
+            <div
+              className="
+                w-14 h-14
+                rounded-full
+                bg-white
+                text-[#0D63C9]
+                flex
+                items-center
+                justify-center
+                text-2xl
+              "
+            >
+              <FaMapMarkerAlt />
+            </div>
+
+            <p>
+              Office Address : XYZ, ABC Street,
+              New Uttar Pradesh - 111111
+            </p>
+
+          </div>
+        </div>
+
+        {/* FIRST ROW */}
+
+        <div className="grid lg:grid-cols-2 gap-12 pt-16">
+
+          {/* TOP CITIES */}
+
+          <div>
+
+            <h3 className="text-[20px] font-semibold mb-6">
+              Tempo Traveller Services in Top Cities
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-4">
+
+              <ul>
+                {cityLinks1.map((item) => (
+                  <li key={item} className={linkClass}>
+                    <FaChevronRight size={10} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <ul>
+                {cityLinks2.map((item) => (
+                  <li key={item} className={linkClass}>
+                    <FaChevronRight size={10} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
             </div>
 
           </div>
 
-          {/* ADDRESS */}
-          <div className="flex items-center gap-4">
+          {/* OUTSTATION */}
 
-            <div className="w-14 h-14 rounded-full bg-white text-[#0B5EC9] flex items-center justify-center text-xl">
+          <div>
 
-              <FaMapMarkerAlt />
+            <h3 className="text-[20px] font-semibold mb-6">
+              Tempo Traveller for Outstation from Delhi
+            </h3>
 
-            </div>
+            <div className="grid md:grid-cols-2 gap-4">
 
-            <div>
-              <p className="text-sm text-gray-200">
-                Office Address - XYZ, ABC Street,
-                New Delhi - 111111
-              </p>
+              <ul>
+                {outstationLinks1.map((item) => (
+                  <li key={item} className={linkClass}>
+                    <FaChevronRight size={10} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <ul>
+                {outstationLinks2.map((item) => (
+                  <li key={item} className={linkClass}>
+                    <FaChevronRight size={10} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
             </div>
 
           </div>
 
         </div>
 
-        {/* FOOTER CONTENT */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-16 pb-12">
+        {/* SECOND ROW */}
 
-          {/* COLUMN 1 */}
+        <div className="grid lg:grid-cols-3 gap-12 pt-12 pb-12">
+
+          {/* MAHARAJA */}
+
           <div>
 
-            <h3 className="text-xl font-semibold mb-6">
-              Tempo Traveller Services in Top Cities
+            <h3 className="text-[20px] font-semibold mb-6">
+              Maharaja Tempo Traveller Variants
             </h3>
 
-            <div className="grid grid-cols-2 gap-4">
-
-              <ul className="space-y-3">
-
-                {cityLinks1.map((link, index) => (
-
-                  <li
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
-                  >
-
-                    <FaChevronRight className="text-[10px]" />
-
-                    {link}
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-              <ul className="space-y-3">
-
-                {cityLinks2.map((link, index) => (
-
-                  <li
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
-                  >
-
-                    <FaChevronRight className="text-[10px]" />
-
-                    {link}
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-            </div>
-
-          </div>
-
-          {/* COLUMN 2 */}
-          <div>
-
-            <h3 className="text-xl font-semibold mb-6">
-              Tempo Traveller for Outstation from Delhi
-            </h3>
-
-            <div className="grid grid-cols-2 gap-4">
-
-              <ul className="space-y-3">
-
-                {outstationLinks1.map((link, index) => (
-
-                  <li
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
-                  >
-
-                    <FaChevronRight className="text-[10px]" />
-
-                    {link}
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-              <ul className="space-y-3">
-
-                {outstationLinks2.map((link, index) => (
-
-                  <li
-                    key={index}
-                    className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
-                  >
-
-                    <FaChevronRight className="text-[10px]" />
-
-                    {link}
-
-                  </li>
-
-                ))}
-
-              </ul>
-
-            </div>
-
-          </div>
-
-          {/* COLUMN 3 */}
-          <div>
-
-            <h3 className="text-xl font-semibold mb-6">
-              Useful Links
-            </h3>
-
-            <ul className="space-y-4">
-
-              {usefulLinks.map((link, index) => (
-
-                <li
-                  key={index}
-                  className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition"
-                >
-
-                  <FaChevronRight className="text-[10px]" />
-
-                  {link}
-
+            <ul>
+              {maharajaLinks.map((item) => (
+                <li key={item} className={linkClass}>
+                  <FaChevronRight size={10} />
+                  {item}
                 </li>
-
               ))}
-
             </ul>
 
           </div>
 
-          {/* COLUMN 4 */}
+          {/* USEFUL LINKS */}
+
           <div>
 
-            <h3 className="text-xl font-semibold mb-6">
+            <h3 className="text-[20px] font-semibold mb-6">
+              Useful Links
+            </h3>
+
+            <ul>
+              {usefulLinks.map((item) => (
+                <li key={item} className={linkClass}>
+                  <FaChevronRight size={10} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+          </div>
+
+          {/* SOCIAL */}
+
+          <div>
+
+            <h3 className="text-[20px] font-semibold mb-8">
               Lets Connect Together
             </h3>
 
-            {/* SOCIAL ICONS */}
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-4">
 
-              {[
-                <FaFacebookF />,
-                <FaInstagram />,
-                <FaYoutube />,
-                <FaPinterestP />,
-                <FaEnvelope />,
-                <FaLinkedinIn />,
-              ].map((icon, index) => (
-
+              {socialIcons.map((Icon, index) => (
                 <div
                   key={index}
-                  className="w-10 h-10 rounded-full bg-white text-[#02182B] flex items-center justify-center hover:bg-red-600 hover:text-white transition cursor-pointer"
+                  className="
+                    w-11 h-11
+                    rounded-full
+                    bg-white
+                    text-red-600
+                    flex
+                    items-center
+                    justify-center
+                    cursor-pointer
+                    hover:bg-red-600
+                    hover:text-white
+                    transition-all
+                    duration-300
+                  "
                 >
-
-                  {icon}
-
+                  <Icon />
                 </div>
-
               ))}
 
             </div>
@@ -309,19 +355,30 @@ export default function Footer() {
 
       </div>
 
-      {/* BOTTOM BAR */}
-      <div className="border-t border-white/10 py-5 mt-6">
+      {/* COPYRIGHT */}
 
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+      <div className="bg-[#011220] py-5">
 
-          <p>
-            © 2025 All Right Reserved XYZ
+        <div
+          className="
+            max-w-7xl
+            mx-auto
+            px-6
+            flex
+            flex-col
+            md:flex-row
+            justify-between
+            items-center
+            text-sm
+          "
+        >
+          <p className="text-white">
+            © 2026 All Right Reserved XYZ
           </p>
 
-          <p className="mt-3 md:mt-0">
-            Design & Development by React Dev
+          <p className="text-white mt-2 md:mt-0">
+            Design & Development by Ritesh Ray
           </p>
-
         </div>
 
       </div>

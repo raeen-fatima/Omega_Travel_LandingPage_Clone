@@ -6,47 +6,41 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 const faqData = [
   {
     question:
-      "What is the distance between Hyderabad and Goa by highway?",
-
+      "What is the distance between Hyderabad from Goa by highway?",
     answer:
-      "The distance from Hyderabad to Goa is around 700 km depending on the route. The most popular route is via NH65 through Kurnool, Hospet and Hubli.",
+      "The distance from Hyderabad to Goa is around 700–700 km depending on the route. The most popular route is via NH65 through Kurnool, Hospet, and Hubli.",
   },
 
   {
     question:
-      "How long does it take to travel from Hyderabad to Goa by Tempo Traveller?",
-
+      "How long is it going to take from Hyderabad from Goa by a Tempo Traveller?",
     answer:
-      "Usually it takes around 12-14 hours depending on traffic, weather and route conditions.",
+      "Usually it takes around 12–14 hours depending on traffic, weather and route conditions.",
   },
 
   {
     question:
-      "What is the cost of a Tempo Traveller from Hyderabad to Goa?",
-
+      "What's the cost for a Tempo Traveller from Hyderabad to Goa?",
     answer:
-      "The cost depends on the seating capacity, luxury level and trip duration.",
+      "The cost depends on seating capacity, vehicle type, luxury level and trip duration.",
   },
 
   {
     question:
-      "Why choose a Tempo Traveller instead of trains?",
-
+      "What's the ideal technique to make use of a Tempo Traveller compared to train?",
     answer:
-      "Tempo Travellers provide door-to-door service, flexibility, comfort and group bonding experience.",
+      "Tempo Travellers provide door-to-door service, flexibility, comfort and better group travel experience.",
   },
 
   {
     question:
-      "Is the Hyderabad to Goa route safe for night travel?",
-
+      "Is the Hyderabad to Goa route safe for travel at night?",
     answer:
-      "Yes, the route is generally safe with proper highways and experienced drivers.",
+      "Yes. The route is generally safe with good highways and experienced drivers.",
   },
 ];
 
 export default function FAQ() {
-
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleFAQ = (index) => {
@@ -55,77 +49,86 @@ export default function FAQ() {
 
   return (
     <section className="py-14 bg-[#f5f5f5]">
-
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h2 className="text-[38px] font-bold text-[#003B7A]">
 
-          10. Hyderabad to Goa:
+        <h2 className="text-3xl font-bold leading-tight">
+          <span className="text-[#003B7A] border-b-4 border-[#003B7A]">
+            10. Hyderabad to Goa:
+          </span>
+
           <span className="text-red-600">
             {" "}
             (FAQ) Frequently Asked Questions
           </span>
-
         </h2>
 
-        {/* FAQ List */}
-        <div className="mt-10 space-y-4">
+        {/* FAQ */}
+
+        <div className="mt-6 space-y-3">
 
           {faqData.map((faq, index) => (
-
             <div
               key={index}
-              className="bg-white rounded-lg shadow-sm overflow-hidden"
+              className="
+                bg-[#f1f1f1]
+                rounded-lg
+                overflow-hidden
+              "
             >
-
-              {/* Question */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between px-6 py-5 text-left"
+                className="
+                  w-full
+                  flex
+                  items-center
+                  justify-between
+                  px-5
+                  py-5
+                  text-left
+                "
               >
-
-                <span className="text-[17px] font-medium text-gray-800">
-
+                <span
+                  className="
+                    text-[16px]
+                    text-black
+                    font-normal
+                  "
+                >
                   {faq.question}
-
                 </span>
 
-                <span className="text-blue-700 text-sm">
-
+                <span className="text-[#0B67C2] text-sm ml-4 shrink-0">
                   {openIndex === index ? (
                     <FaChevronUp />
                   ) : (
                     <FaChevronDown />
                   )}
-
                 </span>
-
               </button>
 
-              {/* Answer */}
               {openIndex === index && (
-
-                <div className="px-6 pb-6 text-gray-700 leading-8 text-[15px] border-t">
-
-                  <p className="pt-4">
-
-                    {faq.answer}
-
-                  </p>
-
+                <div
+                  className="
+                    px-5
+                    pb-5
+                    pt-2
+                    text-[15px]
+                    leading-8
+                    text-[#333]
+                    border-t
+                    border-gray-200
+                  "
+                >
+                  {faq.answer}
                 </div>
-
               )}
-
             </div>
-
           ))}
-
         </div>
 
       </div>
-
     </section>
   );
 }
